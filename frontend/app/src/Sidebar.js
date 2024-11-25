@@ -19,7 +19,7 @@ import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Sidebar.css";
 
 const sidebarItems = [
-  { label: "Home", icon: faHome, path: "/" },
+  { label: "Dashboard", icon: faHome, path: "/dashboard" },
   {
     label: "Rodadas de Preço",
     icon: faBook,
