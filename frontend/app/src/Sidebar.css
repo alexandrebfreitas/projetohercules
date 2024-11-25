@@ -1,0 +1,55 @@
+.sidebar {
+  width: 200px;
+  transition: width 1s ease-in-out;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+}
+.text-container {
+  opacity: 0; /* Texto invisível inicialmente */
+  visibility: hidden; /* Não ocupa espaço visual */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza as mudanças */
+  transition-delay: 0.5s; /* Aguarda a sidebar expandir totalmente */
+}
+
+.sidebar.expanded .text-container {
+  opacity: 1; /* Texto visível após a transição */
+  visibility: visible; /* Ocupa espaço visual */
+  transition-delay: 0s; /* Sem atraso ao recolher */
+}
+
+.submenu {
+  overflow: hidden;
+}
+
+.submenu.collapsed {
+  max-height: 0; /* Define a altura como 0 */
+  padding: 0; /* Remove qualquer padding */
+  margin: 0; /* Remove margens */
+  overflow: hidden; /* Garante que o conteúdo oculto não seja exibido */
+  border: 0; /* Remove bordas, se houver */
+  transition: max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease; /* Suaviza transições */
+}
+
+.submenu.expanded {
+  max-height: 500px; /* Define a altura suficiente para o conteúdo */
+  padding: 0.5rem 0; /* Aplica padding quando expandido */
+  margin: 0; /* Garante margens consistentes */
+  border: none; /* Remove bordas extras */
+  transition: max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease; /* Suaviza transições */
+}
+
+.toggle-btn {
+  top: 0px;
+  right: -15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item button span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
