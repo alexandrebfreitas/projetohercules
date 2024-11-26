@@ -244,5 +244,29 @@ public class FileController {
             return ResponseEntity.status(500).body(response);
         }
     }
+    @PostMapping("/rename")
+    public ResponseEntity<String> renameFile(@RequestParam("path") String path,
+                                             @RequestParam("newName") String newName) {
+        try {
+            // Caminho atual do arquivo
+            Path filePath = Paths.get("uploads").resolve(path).normalize();
+
+            // Novo caminho com o novo nome
+            Path renamedPath = filePath.resolveSibling(newName);
+
+            // Valide se o arquivo existe
+            if (!Files.exists(filePath)) {
+                return ResponseEntity.status(404).body("File not found: " + filePath);
+            }
+
+            // Renomear o arquivo
+            Files.move(filePath, renamedPath, StandardCopyOption.REPLACE_EXISTING);
+
+            return ResponseEntity.ok("File renamed successfully: " + renamedPath.getFileName());
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Could not rename file: " + e.getMessage());
+        }
+    }
+
 
 }
