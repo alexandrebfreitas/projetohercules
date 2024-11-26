@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Dashboard from "./Dashboard";
+import Decks from "./Decks";
+
 
 function Home() {
   return <div>Welcome to Home Page</div>;
@@ -58,7 +60,8 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/meteorologia" element={<Meteorologia />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            {/* Adicione outras rotas conforme necessário */}
+            <Route path="/decks" element={<Decks />} />
+
           </Routes>
         </main>
       </div>

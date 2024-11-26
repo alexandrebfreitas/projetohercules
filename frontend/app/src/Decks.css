@@ -1,0 +1,7 @@
+.folder-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.folder-card:hover {
+  transform: scale(1.05);
+}
